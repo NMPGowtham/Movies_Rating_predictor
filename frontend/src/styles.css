@@ -1,0 +1,130 @@
+/* 🎨 Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+}
+
+/* 📌 Main Container */
+.container {
+    width: 95%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* 🔎 Search Bar */
+.search-bar {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    outline: none;
+}
+
+/* 🎭 Genres Section */
+.genres-container {
+    margin: 20px 0;
+}
+
+/* 📌 Selected & Available Genres */
+.selected-genres, .available-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* 🎟️ Genre Button */
+.genre {
+    background: #ff9800;
+    color: black;
+    padding: 10px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.genre:hover {
+    background: #e68900;
+    transform: scale(1.1);
+}
+
+/* 🎬 Movie List */
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 🎥 Movie Card */
+.movie-card {
+    background: #1e1e1e;
+    padding: 12px;
+    border-radius: 10px;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* 📱 Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .genre {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .movie-card {
+        width: 140px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .genre {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .movie-card {
+        width: 120px;
+        padding: 8px;
+    }
+}

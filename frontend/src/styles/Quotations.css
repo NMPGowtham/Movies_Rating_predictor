@@ -1,0 +1,79 @@
+/* Quote Section Styling */
+.quote-section {
+    width: 100%;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 50px 15px; /* Reduced height */
+    border-top: 3px solid #ffcc00;
+}
+
+/* Heading */
+.quote-section h2 {
+    font-size: 28px; /* Smaller font size */
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Quote Container */
+.quote-container {
+    max-width: 750px; /* Reduced width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Quote Text */
+.quote-text {
+    font-size: 18px; /* Smaller font */
+    line-height: 1.6;
+    color: #ddd;
+    text-align: justify;
+    position: relative;
+    padding: 15px 30px; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 6px solid #ffcc00;
+    border-radius: 6px;
+}
+
+/* Smaller Inverted Commas */
+.quote-text::before {
+    content: "❝";
+    font-size: 40px; /* Reduced size */
+    color: #ffcc00;
+    position: absolute;
+    left: 5px;
+    top: -5px;
+}
+
+.quote-text::after {
+    content: "❞";
+    font-size: 40px; /* Reduced size */
+    color: #ffcc00;
+    position: absolute;
+    right: 5px;
+    bottom: -5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quote-section {
+        padding: 40px 10px;
+    }
+
+    .quote-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .quote-text::before,
+    .quote-text::after {
+        font-size: 35px;
+    }
+}

@@ -1,0 +1,52 @@
+.trending-movies, .awards {
+    margin-top: 5rem;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.movies-list, .awards-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.movie, .award {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.movie:hover, .award:hover {
+    transform: scale(1.05);
+}
+
+.movie img, .award img {
+    width: 100%;
+    border-radius: 5px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie p, .award p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .movies-list, .awards-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-list, .awards-list {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row on mobile */
+    }
+}

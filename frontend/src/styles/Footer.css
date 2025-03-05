@@ -1,0 +1,103 @@
+/* Footer Section */
+.footer {
+  height: 20px;
+  width: 100%;
+  background: #0d0d0d;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 3px solid #ffcc00;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+/* Footer Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Left Section (Logo & Name) */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.footer-logo h2 {
+  font-size: 22px;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Center Section (Navigation Links) */
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+/* Copyright Section */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+  }
+
+  .footer-social {
+      margin-top: 15px;
+  }
+}
