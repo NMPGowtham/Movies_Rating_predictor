@@ -7,3 +7,4 @@ scikit-learn>=1.6.1
 scipy>=1.15.2
 setuptools>=75.8.2
 xgboost>=2.1.4
+flask-cors>=3.1.0
