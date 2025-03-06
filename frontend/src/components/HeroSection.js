@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import "../styles/heroSection.css";
 
 const allGenres = [
-    "Action", "Comedy", "Drama", "Horror", "Romance", "Sci-Fi", "Thriller",
-    "Adventure", "Fantasy", "Mystery", "Crime", "Animation", "Musical",
-    "Western", "War"
+    'action', 'adventure', 'animation', 'comedy', 'crime', 'documentary', 'drama', 'family', 'fantasy', 'history', 
+    'horror', 'music', 'mystery', 'romance', 'science fiction', 'thriller', 'war', 'western'
 ];
 
 const allLanguages = [
-    "English", "Hindi", "Spanish", "French", "German", "Chinese", "Japanese",
-    "Korean", "Russian", "Italian", "Portuguese", "Arabic", "Dutch", "Turkish", "Greek"
+        'afrikaans', 'akan', 
+        'albanian', 'amharic', 'arabic', 'armenian', 'basque', 'bengali', 'breton', 'bulgarian', 'burmese', 'cantonese', 
+        'catalan', 'chichewa; nyanja', 'cornish', 'corsican', 'cree', 'croatian', 'czech', 'danish', 'dutch', 'english',
+        'esperanto', 'estonian', 'finnish', 'french', 'fulah', 'gaelic', 'georgian', 'german', 'greek', 'guarani', 'haitian; haitian creole',
+        'hebrew', 'hindi', 'hungarian', 'icelandic', 'indonesian', 'inuktitut', 'irish', 'italian', 'japanese', 'khmer', 'korean', 'latin', 
+        'lingala', 'lithuanian', 'malay', 'maltese', 'mandarin', 'maori', 'moldavian', 'navajo', 'nepali', 'no language', 'norwegian', 'persian',
+        'polish', 'portuguese', 'punjabi', 'pushto', 'quechua', 'romanian', 'russian', 'samoan', 'sanskrit', 'serbian', 'serbo-croatian', 'sinhalese',
+        'slovak', 'somali', 'sotho', 'spanish', 'swahili', 'swedish', 'tagalog', 'tamil', 'telugu', 'thai', 'tibetan', 'tswana', 'turkish', 'ukrainian',
+        'urdu', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'zulu'
 ];
 
 const HeroSection = () => {
@@ -48,6 +54,19 @@ const HeroSection = () => {
         }
     };
 
+    //fentching data from api
+    const fetchData = async (data) => {
+        const response = await fetch("http://localhost:5000/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data, null, 2)
+        });
+        const result = await response.json();
+        alert(JSON.stringify(result));
+    };
+
     // Handle Submit
     const handleSubmit = () => {
         if (!duration || duration < 1) {
@@ -64,18 +83,19 @@ const HeroSection = () => {
         }
 
         const movieData = {
-            voteAverage: movieDetails.voteAverage,
-            voteCount: movieDetails.voteCount,
-            budget: movieDetails.budget,
-            runtime: duration,
+            vote_average: parseInt(movieDetails.voteAverage),
+            vote_count: parseInt(movieDetails.voteCount),
+            budget: parseFloat(movieDetails.budget),
+            runtime: parseInt(duration),
             adult: movieDetails.adult,
-            popularity: movieDetails.popularity,
+            popularity: parseFloat(movieDetails.popularity),
             genres: selectedGenres,
-            languages: selectedLanguages,
-            numVotes: movieDetails.numVotes
+            spoken_languages: selectedLanguages,
+            numVotes: parseInt(movieDetails.numVotes)
         };
 
-        alert(JSON.stringify(movieData, null, 2));
+        //alert(JSON.stringify(movieData, null, 2));
+        fetchData(movieData);
     };
 
     return (
