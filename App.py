@@ -2,12 +2,14 @@
 from flask import Flask, request, jsonify
 import joblib
 from utlil import DataPreprocessor, File_Formater
+from flask_cors import CORS
 
 # Load the model
 model = joblib.load('models/movies_predictor.joblib')
 
 # Create the app
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
@@ -41,7 +43,6 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
-    #print(data['Rank'])
     data = DataPreprocessor(data)
     data = data.Transform()
     prediction = model.predict(data)
